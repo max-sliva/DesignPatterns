@@ -10,8 +10,6 @@ public class SingletonJava {
         this.field = field;
     }
 
-
-
     private SingletonJava() {}
 
     public static synchronized SingletonJava getInstance() {
@@ -19,5 +17,4 @@ public class SingletonJava {
             _instance = new SingletonJava();
         return _instance;
     }
-
 }
