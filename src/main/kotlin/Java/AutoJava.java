@@ -1,3 +1,5 @@
+package Java;
+
 public class AutoJava {
     private String firm; //создаем закрытый член нашего класса с названием фирмы автомобиля
     private String gosNomer;// закрытый член класса, содержащий максимальную скорость

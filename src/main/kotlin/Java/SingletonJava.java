@@ -1,3 +1,5 @@
+package Java;
+
 public class SingletonJava {
     private static SingletonJava _instance = null;
     private int field = 0;

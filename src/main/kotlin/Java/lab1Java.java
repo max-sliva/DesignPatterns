@@ -1,3 +1,5 @@
+package Java;
+
 public class lab1Java{
     public static void main(String[] args){
 //        SingletonJava mySingle1 = SingletonJava.getInstance();
@@ -7,6 +9,6 @@ public class lab1Java{
 
         QueSingleton que1 = QueSingleton.getInstance();
         QueSingleton que2 = QueSingleton.getInstance();
-        System.out.println("count = "+QueSingleton.getCount());
+        System.out.println("count = "+ QueSingleton.getCount());
     }
 }

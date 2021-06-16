@@ -1,3 +1,5 @@
+package Java;
+
 public class QueSingleton {
     private static QueSingleton _instance = null;
     private  static int count = 0;

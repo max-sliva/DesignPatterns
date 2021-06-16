@@ -1,3 +1,5 @@
+package Java;
+
 public class lab1_1Java {
     public static void main(String[] args) {
         AutoJava auto1 = new AutoJava("Lada", "K105PH");
