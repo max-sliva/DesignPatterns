@@ -6,16 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Forest extends JFrame {
-    private List<Tree> trees = new ArrayList<>();
-
+    private List<Tree> trees = new ArrayList<>(); //список для хранения деревьев (лес)
+//метод для добавления дерева с нужными параметрами в лес
     public void plantTree(int x, int y, String name, Color color, String otherTreeData) {
-        TreeType type = TreeFactory.getTreeType(name, color, otherTreeData);
-        Tree tree = new Tree(x, y, type);
-        trees.add(tree);
+        TreeType type = TreeFactory.getTreeType(name, color, otherTreeData);  //получаем тип нужного дерева
+        Tree tree = new Tree(x, y, type); //получаем дерево нужного типа
+        trees.add(tree);  //добавляем дерево в список
     }
 
     @Override
-    public void paint(Graphics graphics) {
+    public void paint(Graphics graphics) { //переопределяем метод для отрисовки окна
         for (Tree tree : trees) {
             tree.draw(graphics);
         }
