@@ -6,8 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Forest extends JFrame {
+
     private List<Tree> trees = new ArrayList<>(); //список для хранения деревьев (лес)
-//метод для добавления дерева с нужными параметрами в лес
+
+    //метод для добавления дерева с нужными параметрами в лес
+    public List<Tree> getTrees() {
+        return trees;
+    }
+
     public void plantTree(int x, int y, String name, Color color, String otherTreeData) {
         TreeType type = TreeFactory.getTreeType(name, color, otherTreeData);  //получаем тип нужного дерева
         Tree tree = new Tree(x, y, type); //получаем дерево нужного типа

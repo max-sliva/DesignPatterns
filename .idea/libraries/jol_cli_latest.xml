@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jol-cli-latest">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/kotlin/Java/Lab4/jol-cli-latest.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
