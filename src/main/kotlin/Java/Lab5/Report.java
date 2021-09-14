@@ -34,5 +34,13 @@ public class Report {
     public void setText(String text) {
         this.text = text;
     }
+
+    public void printReport(){
+        System.out.println(header);
+        System.out.println();
+        System.out.println(text);
+        System.out.println();
+        System.out.println(footer);
+    }
 }
 
