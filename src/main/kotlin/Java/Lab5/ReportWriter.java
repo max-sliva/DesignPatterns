@@ -9,6 +9,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static j2html.TagCreator.*;
 
@@ -33,7 +36,7 @@ public class ReportWriter {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("HTML Report written: \n"+htmlText);
+        System.out.println("HTML Report written");
     }
 
     public void writePdfReport(Report report, String location) {
@@ -54,7 +57,12 @@ public class ReportWriter {
             contentStream.newLine(); //добавляем переход на новую строку
             //todo сделать метод преобразования текста с несколькими строками в массив строк
             //можно через сплит
-            contentStream.showText(report.getText()); //добавляем текст из второй переменной в поток вывода
+//            contentStream.showText(report.getText()); //добавляем текст из второй переменной в поток вывода
+            for (String s: makeListOfStrings(report.getText())) {
+                contentStream.newLine(); //добавляем переход на новую строку
+                contentStream.showText(s); //добавляем текст из второй переменной в поток вывода
+            }
+            contentStream.newLine(); //добавляем переход на новую строку
             contentStream.newLine(); //добавляем переход на новую строку
             contentStream.showText(report.getFooter()); //добавляем текст из второй переменной в поток вывода
             contentStream.endText(); //окончание работы с текстом
@@ -66,5 +74,17 @@ public class ReportWriter {
         }
 
         System.out.println("Pdf Report written");
+    }
+
+    private List<String> makeListOfStrings(String text){
+        String[] stringArray = text.split("\n");
+//        System.out.println("string array: ");
+//        for (int i = 0; i < stringArray.length; i++){
+//            System.out.println(i+": "+stringArray[i]);
+//        }
+        List<String> textList = Arrays.asList(stringArray);
+//        System.out.println("textList = ");
+//        System.out.println(textList);
+        return textList;
     }
 }

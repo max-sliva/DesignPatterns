@@ -14,10 +14,8 @@ public class ReportTest {
         Report myReport = new Report(header, footer, text);
         myReport.printReport();
         Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
-//        System.out.println("path = "+path);
         ReportGeneratorFacade reportGeneratorFacade = new ReportGeneratorFacade();
         reportGeneratorFacade.generateReport(ReportType.HTML, myReport, path+"\\report");
         reportGeneratorFacade.generateReport(ReportType.PDF, myReport, path+"\\report");
-
     }
 }
