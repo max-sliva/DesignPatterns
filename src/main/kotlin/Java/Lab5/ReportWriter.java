@@ -55,12 +55,9 @@ public class ReportWriter {
             contentStream.newLineAtOffset(25f, 725f);
             contentStream.showText(report.getHeader()); //добавляем текст из первой переменной в поток вывода
             contentStream.newLine(); //добавляем переход на новую строку
-            //todo сделать метод преобразования текста с несколькими строками в массив строк
-            //можно через сплит
-//            contentStream.showText(report.getText()); //добавляем текст из второй переменной в поток вывода
-            for (String s: makeListOfStrings(report.getText())) {
+            for (String s: makeListOfStrings(report.getText())) { //цикл по списку строк основного текста (см. метод ниже)
                 contentStream.newLine(); //добавляем переход на новую строку
-                contentStream.showText(s); //добавляем текст из второй переменной в поток вывода
+                contentStream.showText(s); //добавляем текст из строки списка
             }
             contentStream.newLine(); //добавляем переход на новую строку
             contentStream.newLine(); //добавляем переход на новую строку
@@ -76,7 +73,7 @@ public class ReportWriter {
         System.out.println("Pdf Report written");
     }
 
-    private List<String> makeListOfStrings(String text){
+    private List<String> makeListOfStrings(String text){ //метод для преобразования многострочного текста в список строк
         String[] stringArray = text.split("\n");
 //        System.out.println("string array: ");
 //        for (int i = 0; i < stringArray.length; i++){
