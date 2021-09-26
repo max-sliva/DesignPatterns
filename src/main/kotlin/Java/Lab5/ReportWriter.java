@@ -4,6 +4,7 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType0Font;
+import static j2html.TagCreator.*;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static j2html.TagCreator.*;
+
 
 public class ReportWriter {
 
@@ -74,12 +75,12 @@ public class ReportWriter {
     }
 
     private List<String> makeListOfStrings(String text){ //метод для преобразования многострочного текста в список строк
-        String[] stringArray = text.split("\n");
+        String[] stringArray = text.split("\n"); //разделяем текст на части по символу конца строки
 //        System.out.println("string array: ");
 //        for (int i = 0; i < stringArray.length; i++){
 //            System.out.println(i+": "+stringArray[i]);
 //        }
-        List<String> textList = Arrays.asList(stringArray);
+        List<String> textList = Arrays.asList(stringArray); //и преобразуем в список
 //        System.out.println("textList = ");
 //        System.out.println(textList);
         return textList;
