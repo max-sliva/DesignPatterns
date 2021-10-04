@@ -11,5 +11,6 @@ public class DisplayTimetable2 {
             tmpArr = timetable[i].split(";");
             System.out.printf("%s\t%s\t%s\t\t%s\t\t\t\t%s\t\t\t%s\n", tmpArr[0], tmpArr[1], tmpArr[2], tmpArr[3], tmpArr[4], tmpArr[5]);
         }
+        System.out.println("file info: "+timetableTrains.getTimetableInfo());
     }
 }

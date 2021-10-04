@@ -29,4 +29,8 @@ public class TimetableTrainsProxy implements TimeTable {
         timetableTrains = null;
     }
 
+    @Override
+    public String getTimetableInfo(){
+        return timetableTrains.getTimetableInfo();
+    }
 }
