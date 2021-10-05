@@ -1,5 +1,7 @@
 package Java.Lab8_Threads;
 
+import java.io.File;
+
 public class TimetableTrainsProxy implements TimeTable {
     // Ссылка на оригинальный объект
     private TimeTable timetableTrains = new TimetableTrains();
@@ -33,4 +35,10 @@ public class TimetableTrainsProxy implements TimeTable {
     public String getTimetableInfo(){
         return timetableTrains.getTimetableInfo();
     }
+
+    @Override
+    public File getFile() {
+        return timetableTrains.getFile();
+    }
+
 }

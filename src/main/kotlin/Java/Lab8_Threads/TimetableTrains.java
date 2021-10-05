@@ -45,4 +45,9 @@ public class TimetableTrains implements TimeTable {
         }
         return timetableInfo;
     }
+
+    @Override
+    public File getFile() {
+        return timetableFile;
+    }
 }
