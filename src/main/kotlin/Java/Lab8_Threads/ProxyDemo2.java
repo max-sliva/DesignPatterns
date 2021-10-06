@@ -6,6 +6,7 @@ import java.awt.*;
 public class ProxyDemo2 {
     private static TimeTable timetableTrains= new TimetableTrainsProxy();
     private static JTable centerTable;
+    private static UpdateThread updateThread;
 
     public static void main(String[] args) {
         System.out.println("Расписание");
@@ -13,8 +14,6 @@ public class ProxyDemo2 {
         displayTimetable.printTimetable();
 
         createGUI();
-        UpdateThread updateThread = new UpdateThread(timetableTrains.getFile(), centerTable);
-        updateThread.start();
     }
 
     private static void createGUI() {
@@ -34,7 +33,6 @@ public class ProxyDemo2 {
     }
 
     private static void setCenterTable(JFrame frame) {
-        //todo взять оаботу с таблицей http://java-online.ru/swing-jtable.xhtml
         String[] timetable = timetableTrains.getTimetable();
         String[] header = {"Поезд","Откуда", "Куда", "Время отправления", "Время прибытия", "Время в пути"};
         String[][] tableArray = new String[timetable.length][6];
@@ -45,6 +43,11 @@ public class ProxyDemo2 {
         JScrollPane scrollPane = new JScrollPane(centerTable);
         centerTable.setFillsViewportHeight(true);
         frame.add(scrollPane, BorderLayout.CENTER);
+        updateThread = new UpdateThread(timetableTrains, centerTable);
+        updateThread.start();
+//        System.out.println("model = "+centerTable.getModel());
+//        System.out.println("rowCount = "+centerTable.getModel().getRowCount());
+//        updateThread.setTableModel(centerTable.getModel());
     }
 
 }
