@@ -9,10 +9,9 @@ public class ProxyDemo2 {
     private static UpdateThread updateThread;
 
     public static void main(String[] args) {
-        System.out.println("Расписание");
-        DisplayTimetable2 displayTimetable = new DisplayTimetable2();
-        displayTimetable.printTimetable();
-
+//        System.out.println("Расписание");
+//        DisplayTimetable2 displayTimetable = new DisplayTimetable2();
+//        displayTimetable.printTimetable();
         createGUI();
     }
 

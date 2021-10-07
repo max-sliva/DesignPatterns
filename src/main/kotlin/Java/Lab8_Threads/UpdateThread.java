@@ -27,7 +27,6 @@ public class UpdateThread extends Thread{
 
     @Override
     public void run() {
-//        int i = 4;
         while (true) {
             try {
                 BasicFileAttributes attr = Files.readAttributes(this.timetableTrains.getFile().toPath(), BasicFileAttributes.class);
@@ -47,26 +46,12 @@ public class UpdateThread extends Thread{
                         for (int j = 0; j < 6; j++) {
                             tableModel.setValueAt(tableArray[i][j], i, j);
                         }
-
                     }
-
-                } else {
-//                    System.out.println("!!Not Modified!!");
                 }
-//                if (i>=0) {
-//                    tableModel.setValueAt("Варт", i--, 2);
-//                    System.out.println("Change");
-//                }
                 sleep(2000);
             } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
             }
-
         }
     }
-
-//    public void setTableModel(TableModel model) {
-//        tableModel = model;
-//        System.out.println("rowCount = "+tableModel.getRowCount());
-//    }
 }
